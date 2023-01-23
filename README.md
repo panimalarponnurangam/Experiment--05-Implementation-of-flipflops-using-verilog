@@ -107,19 +107,41 @@ Q(t+1)=T′Q(t)+TQ(t)′
 
 
 ### PROGRAM 
+
+module flipflop(S,R,clock,Q,Qbar);
+input S,R,clock;
+output Q,Qbar;
+wire X,Y;
+nand(X,S,clock);
+nand(Y,R,clock);
+nand(Q,X,Qbar);
+nand(Qbar,Y,Q);
+endmodule
+
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by:panimalar.p 
+RegisterNumber: 22009107 
 */
-
-
-
-
-
-
 ### RTL LOGIC FOR FLIPFLOPS 
 
+![Screenshot (101)](https://user-images.githubusercontent.com/121490826/214130311-bc328f29-a4c9-4036-8067-1aad515d1b9c.png)
+
+
+### TRUTH TABLE
+
+
+### TIMING DIGRAMS FOR FLIP FLOPS
+
+![Screenshot (105)](https://user-images.githubusercontent.com/121490826/214130146-8a965a31-3f59-454f-aa4e-1489195d504c.png)
+
+## Result:
+The program for designing book cover page using html and css is executed successfully
+
+
+
+
+ 
 
 
 
@@ -128,7 +150,8 @@ RegisterNumber:
 
 
 
-### TIMING DIGRAMS FOR FLIP FLOPS 
+
+ 
 
 
 
@@ -137,4 +160,4 @@ RegisterNumber:
 
 
 
-### RESULTS 
+ 
