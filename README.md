@@ -102,8 +102,10 @@ Q(t+1)=T′Q(t)+TQ(t)′
 ⇒Q(t+1)=T⊕Q(t)
 
 ### Procedure
-/* write all the steps invloved */
-
+ 1.using nand gates and wires construct SR flip flop
+ 2.Repeat same steps to construct JK,D,T,flipflop
+ 3.Find Rtl logic and timing diagram for all flipflop
+ 4.end the prorgam
 
 
 ### PROGRAM 
@@ -118,6 +120,39 @@ nand(Q,X,Qbar);
 nand(Qbar,Y,Q);
 endmodule
 
+
+module df(D,clock,Q,Qbar);
+input D,clock;
+output Q,Qbar;
+assign Dbar = ~D;
+wire X,Y;
+nand(X,D,clock);
+nand(Y,Dbar,clock);
+nand(Q,X,Qbar);
+nand(Qbar,Y,Q);
+endmodule
+
+module JKf(J,K,clock,Q,Qbar);
+input J,K,clock;
+output Q,Qbar;
+wire P,S;
+nand(P,J,clock,Qbar);
+nand(S,K,clock,Q);
+nand(Q,P,Qbar);
+nand(Qbar,S,Q);
+endmodule
+
+module Tf(T,clock,Q,Qbar);
+input T,clock;
+output Q,Qbar;
+wire A,B;
+nand(A,T,clock,Qbar);
+nand(B,T,clock,Q);
+nand(Q,A,Qbar);
+nand(Qbar,B,Q);
+endmodule
+
+
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
 Developed by:panimalar.p 
@@ -126,14 +161,31 @@ RegisterNumber: 22009107
 ### RTL LOGIC FOR FLIPFLOPS 
 
 ![Screenshot (101)](https://user-images.githubusercontent.com/121490826/214130311-bc328f29-a4c9-4036-8067-1aad515d1b9c.png)
+![Screenshot (108)](https://user-images.githubusercontent.com/121490826/214201255-7f828efa-066a-4b18-bc25-d11503a136b0.png)
+![Screenshot (112)](https://user-images.githubusercontent.com/121490826/214204073-5247fdf6-7451-49c1-8fd4-514cf485bb75.png)
+![Screenshot (117)](https://user-images.githubusercontent.com/121490826/214206373-b73a52a1-e7af-47c4-ab7b-b62c3981d6db.png)
 
 
 ### TRUTH TABLE
+
+![Screenshot (129)](https://user-images.githubusercontent.com/121490826/214209625-c67acfd7-9609-4833-a9a8-80c0a536cff2.png)
+
+![Screenshot (130)](https://user-images.githubusercontent.com/121490826/214209642-27f374d4-df64-4f3a-abc9-5e6a8fa7a53b.png)
+
+![Screenshot (126)](https://user-images.githubusercontent.com/121490826/214208533-968c7221-31e3-437a-b2df-d10a926a6bb5.png)
+
+![Screenshot (125)](https://user-images.githubusercontent.com/121490826/214208666-bd89c8c0-604b-465e-9d4a-f5555e77c88a.png)
 
 
 ### TIMING DIGRAMS FOR FLIP FLOPS
 
 ![Screenshot (105)](https://user-images.githubusercontent.com/121490826/214130146-8a965a31-3f59-454f-aa4e-1489195d504c.png)
+![Screenshot (109)](https://user-images.githubusercontent.com/121490826/214201346-4018bd5e-da03-45c3-87d2-dec11fc6645e.png)
+
+![Screenshot (113)](https://user-images.githubusercontent.com/121490826/214204185-b2a73e50-71af-4402-9c9f-7f87e2120dc5.png)
+![Screenshot (118)](https://user-images.githubusercontent.com/121490826/214206444-d06eb3b8-a790-4034-a8c7-7df8049e3805.png)
+
+
 
 ## Result:
 The program for designing book cover page using html and css is executed successfully
